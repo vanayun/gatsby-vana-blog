@@ -4,13 +4,16 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Utterences } from '../components/utterances'
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const comment = this.props.data.site.siteMetadata.comment
     const { previous, next } = this.props.pageContext
+    const { utterances } = comment
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -58,6 +61,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        {!!utterances && <Utterences repo={utterances} />}
       </Layout>
     )
   }
@@ -71,6 +75,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        comment {
+          utterances
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

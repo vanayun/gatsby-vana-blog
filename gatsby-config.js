@@ -6,6 +6,12 @@ module.exports = {
     siteUrl: `https://vanayun.netlyfy.com/`,
     social: {
       facebook: `yunjugyeong`,
+      github: `vanayun`,
+    },
+    icon: `static/favicon.ico`,
+    keywords: [`blog`],
+    comment: {
+      utterances: `vanayun/gatsby-vana-blog`,
     },
   },
   plugins: [
@@ -42,6 +48,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-emoji`,
         ],
       },
     },

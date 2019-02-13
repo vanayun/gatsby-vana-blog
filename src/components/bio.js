@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import { FaGithub, FaFacebookSquare } from "react-icons/fa"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
@@ -30,13 +31,17 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+            <p class="author">
+              Written by <strong>{author}</strong> 
               {` `}
-              <a href={`https://www.facebook.com/${social.facebook}`}>
-                You should follow her on facebook
-              </a>
+              <p class="social">
+                {social.github && (
+                  <a href={`https://github.com/${social.github}`} target="_blank"><FaGithub/></a>
+                )}
+                {social.facebook && (
+                  <a href={`https://www.facebook.com/${social.facebook}`} target="_blank"><FaFacebookSquare/></a>
+                )}
+              </p>
             </p>
           </div>
         )
@@ -58,7 +63,8 @@ const bioQuery = graphql`
       siteMetadata {
         author
         social {
-          facebook
+          facebook,
+          github
         }
       }
     }
