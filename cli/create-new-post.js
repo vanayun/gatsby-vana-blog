@@ -13,6 +13,7 @@ const TARGET_DIR = `${cwd}${CONTENTS_DIR}`
 const IGNORE_DIR = 'images'
 const UTF_8 = 'utf8'
 const DATE_FORMAT = 'YYYY-MM-DD HH:MM:SS'
+const DATE_DIR_FORMAT = 'YYYY-MM-DD'
 
 const ignoreFunc = (file, stats) =>
   stats.isDirectory() && path.basename(file) == IGNORE_DIR
@@ -120,6 +121,7 @@ const fetchTitle = async category => {
 
 module.exports = (async function() {
   const date = dateFns.format(new Date(), DATE_FORMAT)
+  const dateDir = dateFns.format(new Date(), DATE_DIR_FORMAT)
 
   log.info('Create new post:: ', date)
   log.start('Start to process!\n')
@@ -136,7 +138,8 @@ module.exports = (async function() {
   const fileName = getFileName(title)
   const contents = refineContents({ title, date, category })
 
-  fs.writeFile(`${destDir}/${fileName}.md`, contents, err => {
+  console.log(dateDir);
+  fs.writeFile(`${destDir}/${dateDir}-${fileName}.md`, contents, err => {
     if (err) {
       log.error('Unknown Error: Cannot write file!')
       return
@@ -144,6 +147,6 @@ module.exports = (async function() {
     console.log('')
 
     log.success('Success to create new post!')
-    log.note(`/${category}/${fileName}.md\n${contents}`)
+    log.note(`/${category}/${dateDir}-s${fileName}.md\n${contents}`)
   })
 })()
