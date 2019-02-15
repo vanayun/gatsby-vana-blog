@@ -147,6 +147,6 @@ module.exports = (async function() {
     console.log('')
 
     log.success('Success to create new post!')
-    log.note(`/${category}/${dateDir}-s${fileName}.md\n${contents}`)
+    log.note(`/${category}/${dateDir}-${fileName}.md\n${contents}`)
   })
 })()
