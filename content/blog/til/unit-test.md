@@ -86,6 +86,7 @@ describe('Hello', ()=> {
   })
 });
 ```
+>
 ```bash
 $ npm run test
 ```
@@ -97,7 +98,7 @@ karma.config.js
 singleRun: false, // false면 계속 실행, true면 한번만 실행
 ```
 or  
-package.json에서 스크림트에 옵션을 주는 방법 (http://karma-runner.github.io/3.0/config/configuration-file.html)  
+package.json에서 스크립트에 옵션을 주는 방법 (http://karma-runner.github.io/3.0/config/configuration-file.html)  
 ```javascript
  "scripts": {
     "dev-test": "karma start --no-single-run",
@@ -149,7 +150,7 @@ var Hello = {
 
 ### AJAX 테스트  
 Jasmine에서 ajax 테스트를 위한 jasmin-ajax 라이브러리를 제공한다.  
-카리마로 Jasmine을 사용하면 karma-jasmine-ajax 플러그인을 사용하면 된다.  
+karma로 Jasmine을 사용하면 karma-jasmine-ajax 플러그인을 사용하면 된다.  
 
 ```bash
 $ npm i karma-jasmine-ajax --save-dev
