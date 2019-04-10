@@ -3,9 +3,9 @@ import Typography from "typography"
 const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
-  headerFontFamily: ['Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'],
-  bodyFontFamily: ['Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'],
-  bodyFontColor: '#404040'
+  headerFontFamily: ['Noto Sans light', 'Malgun gothic', '맑은 고딕', 'sans-serif'],
+  bodyFontFamily: ['Noto Sans light', 'Malgun gothic', '맑은 고딕', 'sans-serif'],
+  bodyFontColor: '#333e4c'
 })
 
 // Hot reload typography in development.

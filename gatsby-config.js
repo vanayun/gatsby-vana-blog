@@ -37,7 +37,17 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: true,
+              sizeByPixelDensity: true,
+              showCaptions: true,
             },
+          },
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              username: 'vanayun',
+              includeDefaultCss: true
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
@@ -55,8 +65,13 @@ module.exports = {
               }
             },
           },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              destinationDir: 'path/to/dir',
+            }
+          },
           `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-emoji`,
         ],

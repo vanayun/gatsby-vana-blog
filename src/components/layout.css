@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-p, h2 {
-  margin: 0;
-}
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -16,8 +12,7 @@ html, body {
   padding: 0;
 }
 html {
-  font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif, "Source Sans Pro", sans-serif;
-  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (min-width: 670px) {
@@ -26,7 +21,12 @@ html {
   }
 }
 body {
-  -webkit-text-size-adjust: 100%
+  font-size: 20px;
+  line-height: 1.7;
+  font-family: 'Noto Sans light', 'Malgun gothic', '맑은 고딕', sans-serif;
+  color: #333e4c;
+  letter-spacing: -0.03em;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -144,10 +144,6 @@ ol li {
   margin-left: 8px;
 }
 
-li a {
-  text-decoration: underline;
-}
-
 .author {
   font-size: 14px;
   margin: 3px
@@ -199,12 +195,12 @@ body {
   -webkit-tap-highlight-color: #9370db;
 }
 p {
-  line-height: 1.8;
-  margin: 0 0 10px 0;
-  word-break: break-all;
-  font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.009em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  word-wrap: break-word;
 }
 p sup a.footnote {
   background: none;
@@ -262,31 +258,23 @@ figcaption {
 }
 ul li {
   list-style: none;
-  padding: 6px 0;
-  margin-left: 20px;
-  line-height: 1.65;
   position: relative;
+  margin-top: 22px;
+  padding-left: 25px;
 }
 ul li:before {
-	content: "";
+  content: '';
 	position: absolute;
-	width: 8px;
-	height: 8px;
-	background-color: #c1cad4;
-	border-radius: 50%;
-	left: -22px;
-	top: 16px;
+  top: 0;
+  left: 5px;
 }
 .post {
+  font-size: 16px;
   padding-bottom: 40px;
 }
 .post p {
-  line-height: 1.8;
-  margin: 0 0 10px 0;
-  word-break: break-all;
-  font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.009em;
+  font-size: 16px;
+  word-wrap: break-word;
 }
 .post p sup a.footnote {
   background: none;
@@ -346,7 +334,15 @@ ul li:before {
   .post figcaption {
     font-size: 15px;
   }
-}.post ol {
+}
+
+.post li {
+  position: relative;
+  margin-bottom: 0px;
+  padding-left: 25px;
+}
+
+.post ol {
   margin: 0;
   padding-left: 10px;
 }
@@ -423,7 +419,7 @@ ul li:before {
   padding: 0 0 12px 0;
   font-weight: 700;
   font-size: 32px;
-  font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
+  font-family: 'Noto Sans light', 'Malgun gothic', '맑은 고딕', sans-serif;
   line-height: 1.2;
   letter-spacing: -0.009em;
 }
