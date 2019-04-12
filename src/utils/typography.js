@@ -8,10 +8,7 @@ const typography = new Typography({
   bodyFontColor: '#333e4c'
 })
 
-// Hot reload typography in development.
-if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles()
-}
+typography.injectStyles();
 
 export default typography
 export const rhythm = typography.rhythm
