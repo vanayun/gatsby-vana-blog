@@ -8,7 +8,7 @@ const typography = new Typography({
   bodyFontColor: '#333e4c'
 })
 
-typography.injectStyles();
+typography.injectStyles()
 
 export default typography
 export const rhythm = typography.rhythm
